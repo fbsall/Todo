@@ -19,3 +19,10 @@ app.use(session({secret: 'topsecret'}));
 .get('/todo', function(res, req){
   res.render('todo.ejs', {todolist: req.session.todolist});
 });
+
+.post('/todo/add', urlencoderParser, function(res, req){
+  if( req.session.newtodo != ''){
+    req.session.todolist.push(req.)
+  }
+  res.redirect('/todo')
+});
