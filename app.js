@@ -26,3 +26,12 @@ app.use(session({secret: 'topsecret'}));
   }
   res.redirect('/todo')
 });
+
+});
+.get('/todo/delete/:id', function(res, req){
+  if(req.params.id != ''){
+    req.session.todolist.splice(req.params.id, 1);
+  }
+  res.redirect('/todo');
+
+});
